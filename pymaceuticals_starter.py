@@ -25,6 +25,10 @@ print(mouse_metadata.groupby('Mouse ID').count())
 # Combine the data into a single dataset
 ds = pd.merge(mouse_metadata, study_results, how="left", on=["Mouse ID"])
 
+
+print(fourFive)
+
+
 #print(ds)
 # Generate a summary statistics table of mean, median, variance, standard deviation, and SEM of the tumor volume for each regimen
 
@@ -93,6 +97,8 @@ plt.show()
 # In[7]:
 
 # Calculate the final tumor volume of each mouse across four of the most promising treatment regimens. Calculate the IQR and quantitatively determine if there are any potential outliers. 
+
+fourFive = ds[ds['Timepoint']==45]
 
 # get all mice for each drug
 # Capomulin, Ramicane, Infubinol, and Ceftamin
